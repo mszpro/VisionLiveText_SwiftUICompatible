@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-#if canImport(SwiftUICompatible)
-import SwiftUICompatible // Swift Package `https://github.com/mszmagic/SwiftUICompatible.git`
-
 @available(iOS 16.0, *)
-struct ImageLiveTextView_Demo: View {
+public struct PickImageAndShowLiveText: View {
     
     @State private var pickedImageObject: UIImage?
     @State private var showImagePicker: Bool = false
+    var photoPickingButtonLabel: String
+    
+    public init(photoPickingButtonLabel: String = "Pick a photo") {
+        self.photoPickingButtonLabel = photoPickingButtonLabel
+    }
     
     var body: some View {
         
-        Form {
+        Group {
             
-            Button("Pick a photo") {
+            Button(photoPickingButtonLabel) {
                 self.showImagePicker = true
             }
             .sheet(isPresented: $showImagePicker) {
@@ -44,10 +46,8 @@ struct ImageLiveTextView_Demo: View {
     
 }
 
-struct ImageLiveTextView_Demo_Previews: PreviewProvider {
+struct PickImageAndShowLiveText_Previews: PreviewProvider {
     static var previews: some View {
-        ImageLiveTextView_Demo()
+        PickImageAndShowLiveText()
     }
 }
-
-#endif

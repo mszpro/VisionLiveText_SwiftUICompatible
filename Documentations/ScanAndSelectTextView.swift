@@ -11,17 +11,25 @@ import SwiftUI
 import VisionKit
 
 @available(iOS 16.0, *)
-struct DataScannerView_Demo: View {
+public struct ScanAndSelectTextView: View {
     
     @State private var scannedItem: RecognizedItem?
     @State private var showScanningView: Bool = false
+    var showScanningViewButtonLabel: String
+    var cancelScanningViewButtonLabel: String
+    
+    public init(showScanningViewButtonLabel: String = "Show scanning view",
+                cancelScanningViewButtonLabel: String = "Cancel") {
+        self.showScanningView = showScanningView
+        self.cancelScanningViewButtonLabel = cancelScanningViewButtonLabel
+    }
     
     var body: some View {
         
-        Form {
+        Group {
             
             // Button to start scanning
-            Button("Show scanning view") {
+            Button(showScanningViewButtonLabel) {
                 self.showScanningView = true
             }
             .sheet(isPresented: $showScanningView) {
@@ -31,7 +39,7 @@ struct DataScannerView_Demo: View {
                     .disabled(!(DataScannerViewController.isSupported && DataScannerViewController.isAvailable))
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
-                            Button("Cancel") {
+                            Button(cancelScanningViewButtonLabel) {
                                 self.showScanningView = false
                             }
                         }
@@ -49,8 +57,10 @@ struct DataScannerView_Demo: View {
                 switch scannedItem {
                 case .text(let text):
                     Text(text.transcript)
+                        .textSelection(.enabled)
                 case .barcode(let barcode):
                     Text(barcode.payloadStringValue ?? "")
+                        .textSelection(.enabled)
                 }
             }
             
