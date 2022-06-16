@@ -18,7 +18,7 @@ public struct PickImageAndShowLiveText: View {
         self.photoPickingButtonLabel = photoPickingButtonLabel
     }
     
-    var body: some View {
+    public var body: some View {
         
         Group {
             
@@ -44,10 +44,4 @@ public struct PickImageAndShowLiveText: View {
         
     }
     
-}
-
-struct PickImageAndShowLiveText_Previews: PreviewProvider {
-    static var previews: some View {
-        PickImageAndShowLiveText()
-    }
 }

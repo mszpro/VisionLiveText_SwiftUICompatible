@@ -20,11 +20,11 @@ public struct ScanAndSelectTextView: View {
     
     public init(showScanningViewButtonLabel: String = "Show scanning view",
                 cancelScanningViewButtonLabel: String = "Cancel") {
-        self.showScanningView = showScanningView
+        self.showScanningViewButtonLabel = showScanningViewButtonLabel
         self.cancelScanningViewButtonLabel = cancelScanningViewButtonLabel
     }
     
-    var body: some View {
+    public var body: some View {
         
         Group {
             
