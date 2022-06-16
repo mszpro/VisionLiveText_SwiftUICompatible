@@ -1,5 +1,9 @@
 # Live Text - 画像テキスト認識 - SwiftUI互換ビュー
 
+![bar-code-scan-demo](/Documentations/livetext_barcode.jpg)
+
+![live-text-from-image-demo](/Documentations/livetext_imagescan.jpg)
+
 WWDC 2022 / iOS 16で公開された新機能「ライブテキスト」のSwiftUIで使用されている互換ビューです。
 These are compatible views used in SwiftUI for the new live text feature released in WWDC 2022 / iOS 16.
 
@@ -44,7 +48,7 @@ You may also need to add a button to close the scanner view:
     }
 ```
 
-デモコードファイルをご覧ください。
+[デモコードファイル](/Documentations/DataScannerView_Demo.swift)をご覧ください。
 
 ## ImageLiveTextView
 
@@ -64,7 +68,7 @@ Here, `pickedImageObject` will contain the `UIImage` object the user picked.
 Remember to define a frame for the view.
 ビューのフレームを定義することを忘れないでください。
 
-デモコードファイルをご覧ください。
+[デモコードファイル](/Documentations/ImageLiveTextView_Demo.swift)をご覧ください。
 
 ## 使用方法
 
