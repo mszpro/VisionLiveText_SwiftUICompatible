@@ -5,8 +5,9 @@
 //  Created by Shunzhe on 2022/06/16.
 //
 
+#if canImport(VisionKit)
+
 import SwiftUI
-import UIKit
 import VisionKit
 
 @available(iOS 16.0, *)
@@ -61,8 +62,11 @@ public struct DataScannerView: UIViewControllerRepresentable {
     
 }
 
+@available(iOS 16.0, *)
 extension RecognizedItem: Equatable {
     public static func == (lhs: RecognizedItem, rhs: RecognizedItem) -> Bool {
         return lhs.id == rhs.id
     }
 }
+
+#endif

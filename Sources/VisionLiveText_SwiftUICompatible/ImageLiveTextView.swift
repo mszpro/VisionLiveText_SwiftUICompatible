@@ -5,6 +5,8 @@
 //  Created by Shunzhe on 2022/06/16.
 //
 
+#if canImport(UIKit) && canImport(VisionKit)
+
 import UIKit
 import SwiftUI
 import VisionKit
@@ -60,3 +62,5 @@ class LiveTextUIImageView: UIImageView {
         .zero
     }
 }
+
+#endif

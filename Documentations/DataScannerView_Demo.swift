@@ -5,6 +5,8 @@
 //  Created by Shunzhe on 2022/06/16.
 //
 
+#if canImport(VisionKit)
+
 import SwiftUI
 import VisionKit
 
@@ -57,3 +59,5 @@ struct DataScannerView_Demo: View {
     }
     
 }
+
+#endif
