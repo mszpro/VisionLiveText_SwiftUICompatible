@@ -20,7 +20,7 @@ public struct PickImageAndShowLiveText: View {
     
     public var body: some View {
         
-        Group {
+        VStack {
             
             Button(photoPickingButtonLabel) {
                 self.showImagePicker = true

@@ -26,7 +26,7 @@ public struct ScanAndSelectTextView: View {
     
     public var body: some View {
         
-        Group {
+        VStack {
             
             // Button to start scanning
             Button(showScanningViewButtonLabel) {
