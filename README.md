@@ -7,6 +7,8 @@ These are compatible views used in SwiftUI for the new live text feature release
 |---|---|
 | ![bar-code-scan-demo](/Documentations/livetext_barcode.jpg) | ![live-text-from-image-demo](/Documentations/livetext_imagescan.jpg) |
 
+!! このフレームワークは、Xcode 14 betaとiOS 16のシミュレータ/デバイスで動作します。
+
 ## DataScannerView
 
 You can use the `DataScannerView` to use a live camera stream and scan for text or machine-readable codes. Found elements will be highlighted and selectable. (remember to add the permission to access the camera)
